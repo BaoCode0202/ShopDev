@@ -8,7 +8,7 @@ export default function UserMenu({ session }) {
       <h4>Wellcome to Shop Baro</h4>
       {session ? (
         <div className={styles.flex}>
-          <img src={session.user.image} alt="" className={styles.menu__img} />
+          <img src={session?.user?.image} alt="" className={styles.menu__img} />
           <div className={styles.col}>
             <span>Welcome Back</span>
             <h3>{session.user.name}</h3>

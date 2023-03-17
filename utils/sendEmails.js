@@ -4,19 +4,9 @@ import { activateEmailTemplate } from "../emails/activateEmailTemplate";
 const { OAuth2 } = google.auth;
 const OAUTH_PLAYGROUND = "https://developers.google.com/oauthplayground";
 
-const {
-  MAILING_SERVICE_CLIENT_ID,
-  MAILING_SERVICE_CLIENT_SECRET,
-  MAILING_SERVICE_REFRESH_TOKEN,
-  SENDER_EMAIL_ADDRESS,
-} = process.env;
+const { MAILING_SERVICE_CLIENT_ID, MAILING_SERVICE_CLIENT_SECRET, MAILING_SERVICE_REFRESH_TOKEN, SENDER_EMAIL_ADDRESS } = process.env;
 
-const oauth2Client = new OAuth2(
-  MAILING_SERVICE_CLIENT_ID,
-  MAILING_SERVICE_CLIENT_SECRET,
-  MAILING_SERVICE_REFRESH_TOKEN,
-  OAUTH_PLAYGROUND
-);
+const oauth2Client = new OAuth2(MAILING_SERVICE_CLIENT_ID, MAILING_SERVICE_CLIENT_SECRET, MAILING_SERVICE_REFRESH_TOKEN, OAUTH_PLAYGROUND);
 
 //send email
 
@@ -40,7 +30,7 @@ export const sendEmail = (to, url, txt, subject, template) => {
     from: SENDER_EMAIL_ADDRESS,
     to: to,
     subject: subject,
-    html: template(to, url),
+    html: activateEmailTemplate(to, url),
   };
   smtpTransport.sendMail(mailOptions, (err, infos) => {
     if (err) return err;

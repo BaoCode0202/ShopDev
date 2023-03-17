@@ -23,9 +23,7 @@ handler.post(async (req, res) => {
       return res.status(400).json({ message: "This email already exsits." });
     }
     if (password.length < 6) {
-      return res
-        .status(400)
-        .json({ message: "Password must be atleast 6 characters." });
+      return res.status(400).json({ message: "Password must be atleast 6 characters." });
     }
     const cryptedPassword = await bcrypt.hash(password, 12);
     const newUser = new User({ name, email, password: cryptedPassword });

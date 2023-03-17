@@ -4,12 +4,16 @@ import Footer from "../components/footer/index";
 import axios from "axios";
 import db from "../utils/db";
 import { useSession, signIn, signOut } from "next-auth/react";
+import Main from "@/components/home/main";
 export default function Home({ country }) {
   const { data: session } = useSession();
   console.log(session);
   return (
     <div>
       <Header country={country} />
+      <div className={styles.home}>
+        <Main />
+      </div>
       <Footer country={country} />
     </div>
   );

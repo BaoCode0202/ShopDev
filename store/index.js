@@ -2,9 +2,11 @@ import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 import thunk from "redux-thunk";
 import storage from "redux-persist/lib/storage";
-import { persistStore, persistReducer } from "redux-persist";
+import { persistReducer } from "redux-persist";
 import cart from "./cartSlice";
-const reducers = combineReducers({ cart });
+import expandSidebar from "./ExpandSlice";
+import dialog from "./DialogSlice";
+const reducers = combineReducers({ cart, expandSidebar, dialog });
 
 const config = {
   key: "root",

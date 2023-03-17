@@ -74,7 +74,7 @@ export default NextAuth({
   session: {
     strategy: "jwt",
   },
-  // database: process.env.MONGODB_URI,
+  database: process.env.MONGODB_URI,
   secret: process.env.JWT_SECRET,
 });
 
