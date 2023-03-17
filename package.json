@@ -14,14 +14,8 @@
     "@reduxjs/toolkit": "^1.9.1",
     "axios": "^1.2.3",
     "formik": "^2.2.9",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 71f3613b336ed8650a5848e2444c58b7eaea747d
     "googleapis": "^113.0.0",
     "jsonwebtoken": "^9.0.0",
-=======
->>>>>>> parent of b0caad2 (feat: Sign In, Sign Up)
     "mongoose": "^6.8.4",
     "next": "13.1.4",
     "next-auth": "^4.18.10",
