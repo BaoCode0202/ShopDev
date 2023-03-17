@@ -17,7 +17,7 @@ export default function Top({ country }) {
         <ul className={styles.top__list}>
           <li className={styles.li}>
             <img src={country?.flag} alt="" />
-            <span>{country ? country?.name : "Viet Nam"} / usd</span>
+            <span>{country?.name} / usd</span>
           </li>
           <li className={styles.li}>
             <MdSecurity />
@@ -39,7 +39,7 @@ export default function Top({ country }) {
             {session ? (
               <li className={styles.li}>
                 <div className={styles.flex}>
-                  <img src={session.user.image} alt="" />
+                  <img src={session.user?.image} alt="" />
                   <span>{session.user.name}</span>
                   <RiArrowDropDownFill />
                 </div>
